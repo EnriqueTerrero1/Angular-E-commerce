@@ -1,5 +1,5 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -11,8 +11,17 @@ export class MenuComponent implements OnInit {
 
   @Input()
     categorias:string[]=[];
-  
 
+    @Output()
+    filtroDeCategoria:  EventEmitter <string> = new EventEmitter<string>();
+  
+    productosPorCategoria(categoria:string){
+
+      console.log(categoria);
+      this.filtroDeCategoria.emit(categoria);
+
+
+    }
 
   constructor() { }
 

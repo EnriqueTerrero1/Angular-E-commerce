@@ -11,14 +11,16 @@ import { Productos } from '../seedData/seedData';
 })
 export class FiltroComponent implements OnInit {
 
- productos: Producto[] = Productos;
-  
+ 
 
   constructor(private formBuilder: FormBuilder) { }
 
  
   form!: FormGroup
 
+  productos: Producto[] = Productos;
+  categorias:string[]=[];
+  
   @Output()
 
   buscar: EventEmitter<Producto[]> = new EventEmitter<Producto[]>();
@@ -26,9 +28,11 @@ export class FiltroComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.productos=Productos;
     console.log(this.productos);
     this.form = this.formBuilder.group({
       marca: '',
+      categoria:''
       
     });
     this.buscarProducto(this.form.value);
@@ -36,6 +40,19 @@ export class FiltroComponent implements OnInit {
     this.productos=Productos;
     this.buscarProducto(valores);
     })
+
+    this.productos.forEach(producto => {
+
+      if(producto.categoria != this.categorias.find(categoria => categoria == producto.categoria)){
+    
+      this.categorias.push(producto.categoria);
+      }
+      
+    });
+    
+    
+
+   
 
   }
 
@@ -51,5 +68,15 @@ export class FiltroComponent implements OnInit {
     
 
   }
+
+  filtrarPorCategorias(categoria:string){
+
+  this.productos=Productos;
+
+    this.productos = this.productos.filter(producto => producto.categoria.indexOf(categoria) !== -1);
+
+
+
+}
 
 }

@@ -23,29 +23,15 @@ filtrando:boolean=false;
 
  ngOnInit(): void {
 
-this.productos.forEach(producto => {
-
-  if(producto.categoria != this.categorias.find(categoria => categoria == producto.categoria)){
-
-  this.categorias.push(producto.categoria);
-  }
-  
-});
-
-console.log(this.categorias)
-}
-
-
-filtrar(productos:Producto[]){
-
-  this.filtrando=true;
-  this.productosFiltrados =productos
-}
 
 
 
 
-}
+
+
+
+
+}}
 
 
 

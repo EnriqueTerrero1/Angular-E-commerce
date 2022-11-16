@@ -6,7 +6,8 @@ import { FiltroComponent } from './filtro/filtro.component';
 
 
 const routes:Routes=[
-  {path:'',component:FiltroComponent}
+  {path:'',component:FiltroComponent},
+  {path:'filtro',component:FiltroComponent}
 ]
 
 
