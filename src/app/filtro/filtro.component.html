@@ -1,0 +1,10 @@
+
+<div class="container">
+   
+    <form  [formGroup]="form"  class="form-inline">
+      <input formControlName="marca"  style=" max-width: 500px;" class="form-control search" type="search" placeholder="Search" aria-label="Search">
+     <button class=" btn btn-primary">Buscar</button>
+    
+    </form>
+          <app-renderizar-productos [productosParaMostrar]="this.productos"></app-renderizar-productos>
+      </div>

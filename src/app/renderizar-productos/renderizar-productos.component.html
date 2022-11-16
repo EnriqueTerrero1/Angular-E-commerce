@@ -1,0 +1,34 @@
+<div class="flex-container">
+<div class="container" >
+  <div *ngIf ="posicion>0">
+    <!-- <button class="btn btn-primary"   (click)="posicionAnterior()" > <i class="bi bi-arrow-left-square" ></i> </button> -->
+    </div>
+
+   
+<div *ngFor="let producto of productosParaMostrar; let index=index" >
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="producto.imagen" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{producto.descripcion}}</h5>
+      <p class="card-text">descripcion</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Precio: {{producto.precio|currency:"DOP"}}</li>
+      <li class="list-group-item">Marca: {{producto.marca}}</li>
+      <li class="list-group-item">Categoria: {{producto.categoria}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Ver descripcion</a>
+      <a href="#" class="card-link">Agregar al carrito</a>
+    </div>
+     
+    </div>
+  </div>
+  
+</div>
+<!--pendiente-->
+<div *ngIf =" posicion < productos.length ">
+<!-- <button class="btn btn-primary"   (click)="posicionSiguiente()" > <i class="bi bi-arrow-right-square" ></i> </button> -->
+</div>
+</div>
