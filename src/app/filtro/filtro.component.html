@@ -1,14 +1,46 @@
-
-
-
 <app-menu [categorias]="categorias" (filtroDeCategoria)="filtrarPorCategorias($event)"></app-menu>
 
+
+
+
 <div class="container">
-   
-    <form  [formGroup]="form"  class="form-inline">
-      <input formControlName="marca"  style=" max-width: 500px;" class="form-control search" type="search" placeholder="Search" aria-label="Search">
-     <button class=" btn btn-primary">Buscar</button>
-    
-    </form>
-          <app-renderizar-productos [productosParaMostrar]="this.productos"></app-renderizar-productos>
-      </div>
+
+  <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+      aria-controls="collapseExample">
+      Filtro...</a>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+
+      <form [formGroup]="form" class="form-inline">
+        <label>Marca:
+          <input formControlName="marca" style=" max-width: 290px; max-height: 30px;" class="form-control search"
+            type="search" placeholder="Search" aria-label="Search">
+        </label>
+        <label>Descripcion:
+          <input formControlName="descripcion" style=" max-width: 200px; max-height: 30px;" class="form-control search"
+            type="search" placeholder="Search" aria-label="Search">
+        </label>
+        <div class="form-check">
+
+          <label>Categorias: </label>
+          <select formControlName="categoria" class="form-select" aria-label="Default select example">
+            <option selected>Escoger categoria</option>
+            <option *ngFor="let categoria of categorias">{{categoria}}</option>
+
+          </select>
+        </div>
+
+
+
+        <button class=" btn btn-primary">Buscar</button>
+
+
+      </form>
+    </div>
+  </div>
+
+
+  <app-renderizar-productos [productosParaMostrar]="this.productos"></app-renderizar-productos>
+</div>

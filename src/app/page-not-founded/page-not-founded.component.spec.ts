@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarucelComponent } from './carucel.component';
+import { PageNotFoundedComponent } from './page-not-founded.component';
 
-describe('CarucelComponent', () => {
-  let component: CarucelComponent;
-  let fixture: ComponentFixture<CarucelComponent>;
+describe('PageNotFoundedComponent', () => {
+  let component: PageNotFoundedComponent;
+  let fixture: ComponentFixture<PageNotFoundedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CarucelComponent ]
+      declarations: [ PageNotFoundedComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CarucelComponent);
+    fixture = TestBed.createComponent(PageNotFoundedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

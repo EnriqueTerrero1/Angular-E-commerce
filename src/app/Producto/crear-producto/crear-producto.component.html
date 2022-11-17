@@ -1,0 +1,32 @@
+<h1>crear-producto</h1>
+
+<div class="container">
+
+    <h3>Crear nuevo producto</h3>
+    <form onsubmit="guardar()">
+
+        <div class="mb-3">
+            <label  class="form-label">Descripcion</label>
+            <input type="text" class="form-control"  placeholder="Descripcion">
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Categoria</label>
+            <input type="text" class="form-control"  placeholder="Categoria">
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Marca</label>
+            <input type="text" class="form-control" placeholder="Marca" >
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Precio</label>
+            <input type="number" class="form-control" placeholder="Precio" >
+          </div>
+          <div class="mb-3">
+            <label for="formFileSm" class="form-label">Agregar Imagen</label>
+            <input class="form-control form-control-sm"  type="file">
+          </div>
+
+          <button class="btn btn-primary" (click)="guardar()">Agregar</button>
+    </form>
+
+</div>

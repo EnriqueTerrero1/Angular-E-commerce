@@ -32,7 +32,8 @@ export class FiltroComponent implements OnInit {
     console.log(this.productos);
     this.form = this.formBuilder.group({
       marca: '',
-      categoria:''
+      categoria:'',
+      descripcion:''
       
     });
     this.buscarProducto(this.form.value);
@@ -62,6 +63,24 @@ export class FiltroComponent implements OnInit {
     if (valores.marca) {
       console.log(valores);
       this.productos = this.productos.filter(producto => producto.marca.indexOf(valores.marca) !== -1);
+      console.log(this.productos);
+
+    }
+    if (valores.categoria) {
+      console.log(valores);
+      this.productos = this.productos.filter(producto => producto.categoria.indexOf(valores.categoria) !== -1);
+      if(this.productos.length == 0){
+        this.productos = Productos;
+      }
+      console.log(this.productos);
+
+    }
+    if(valores.descripcion){
+      console.log(valores);
+      this.productos = this.productos.filter(producto => producto.descripcion.indexOf(valores.descripcion) !== -1);
+      if(this.productos.length == 0){
+        this.productos = Productos;
+      }
       console.log(this.productos);
 
     }

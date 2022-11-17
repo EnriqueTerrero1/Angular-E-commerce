@@ -20,8 +20,17 @@
 
 .form-inline {
 
-    justify-content: center;
+    justify-content: flex-start;
     /* align-items: center; */
 
     display: flex;
+
+    justify-content: space-between;
 }
+
+input{
+
+    margin-left: 0px;
+}
+
+

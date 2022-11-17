@@ -1,0 +1,11 @@
+table{
+
+    width: 600px;
+    height: 600px;
+}
+
+.container{
+
+    display: flex;
+    justify-content: center;
+}

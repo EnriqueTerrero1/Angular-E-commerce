@@ -1,0 +1,30 @@
+
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Descipcion</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Precio</th>
+
+      </tr>
+    </thead>
+
+
+    <tbody *ngFor="let producto of productos">
+      <tr>
+        <th>{{producto.id}}</th>
+        <td>{{producto.descripcion}}</td>
+        <td>{{producto.marca}}</td>
+        <td>{{producto.categoria}}</td>
+        <td>{{producto.precio|currency:"DOP"}}</td>
+        <td><button class="btn btn-success">Editar</button></td>
+        <td><button class="btn btn-danger">Eliminar</button></td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
