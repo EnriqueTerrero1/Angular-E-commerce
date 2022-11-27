@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Producto } from '../Producto';
+import { CarritoDTO } from '../Carrito';
+import { Pedidos } from '../Pedido';
+import { ProductoDTO } from '../Producto/Producto';
+import { Productos } from '../seedData/seedData';
 
 @Component({
   selector: 'app-renderizar-productos',
@@ -15,11 +18,12 @@ export class RenderizarProductosComponent implements OnInit {
   
   //productosParaMostrar!:Producto[];
 
+  producto:ProductoDTO;
   @Input()
-  productos:Producto[]=[];
+  productos:ProductoDTO[]=[];
 
   @Input()
-  productosParaMostrar:Producto[]=[];
+  productosParaMostrar:ProductoDTO[]=[];
 
     cantidadDeColumnas:number=4;
   
@@ -41,7 +45,14 @@ export class RenderizarProductosComponent implements OnInit {
     cambiarProductos(){
     this.productosParaMostrar=this.productosParaMostrar.slice(this.posicion , this.posicion+3);
     }
+    agregaAlCarrito(producto:ProductoDTO){
 
+      
+      Pedidos.push(producto);
+      
+      console.log(Pedidos);
+
+    }
 
 
     cantidadfilas(){

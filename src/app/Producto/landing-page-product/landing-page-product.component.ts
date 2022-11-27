@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from 'src/app/Producto';
+import { ProductoDTO } from '../Producto';
 import { Productos } from 'src/app/seedData/seedData';
 
 @Component({
@@ -10,11 +10,16 @@ import { Productos } from 'src/app/seedData/seedData';
 export class LandingPageProductComponent implements OnInit {
 
 
-  productos:Producto[] = Productos;
+  productos:ProductoDTO[] = Productos;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  
+  eliminar(producto:ProductoDTO){
 
+    console.log("Producto eliminado "+ producto.descripcion);
+
+  }
 }

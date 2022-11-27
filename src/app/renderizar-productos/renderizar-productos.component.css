@@ -15,9 +15,16 @@
     height: 40px;
 }
 .card-img-top{
-    width: 200px;
+    width: auto;
     height: 200px;
+    /* width: 275px;
+    height: auto; */
+
 }
 .flex-container{
     display: flex;
+}
+.card{
+
+align-items: center;
 }

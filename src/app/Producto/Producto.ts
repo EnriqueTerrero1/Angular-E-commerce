@@ -1,5 +1,5 @@
 
-export class Producto{
+export class ProductoDTO{
 
     id!:Number
     categoria!:string

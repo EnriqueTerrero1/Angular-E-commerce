@@ -5,11 +5,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li *ngFor="let categoria of categorias" class="nav-item active">
-          <a class="nav-link"    (click)="productosPorCategoria(categoria)">{{categoria}} <span class="sr-only"></span></a>
+        <li class="nav-item active">
+          <a class="nav-link"> Home<span class="sr-only"></span></a> 
+
         </li>
-       
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="producto"> Producto<span class="sr-only"></span></a> 
+          
+        </li>
+       <li>
+        <a class="nav-link"> <i class="bi bi-cart"></i> My Cart</a>
+       </li>
       </ul>
+
       
     </div>
   </nav>

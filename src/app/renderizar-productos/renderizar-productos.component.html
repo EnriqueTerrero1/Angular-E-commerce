@@ -12,6 +12,7 @@
     <div class="card-body">
       <h5 class="card-title">{{producto.descripcion}}</h5>
       <p class="card-text">descripcion</p>
+     
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Precio: {{producto.precio|currency:"DOP"}}</li>
@@ -20,7 +21,7 @@
     </ul>
     <div class="card-body">
       <a href="#" class="card-link">Ver descripcion</a>
-      <a href="#" class="card-link">Agregar al carrito</a>
+      <a href="#" class="card-link" (click)="agregaAlCarrito(producto)">Agregar al carrito</a>
     </div>
      
     </div>

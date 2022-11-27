@@ -6,14 +6,17 @@ import { FiltroComponent } from './filtro/filtro.component';
 import { CrearProductoComponent } from './Producto/crear-producto/crear-producto.component';
 import { PageNotFoundedComponent } from './page-not-founded/page-not-founded.component';
 import { LandingPageProductComponent } from './Producto/landing-page-product/landing-page-product.component';
-
-
+import { EditarProductosComponent } from './Producto/editar-productos/editar-productos.component';
+import { LandingPageCarritoComponent } from './carrito/landing-page-carrito/landing-page-carrito.component';
 const routes:Routes=[
   {path:'',component:LandingPageComponent},
-  {path:'filtro',component:FiltroComponent},
-  {path:'crear/producto',component:CrearProductoComponent },
+  //{path:'filtro',component:FiltroComponent},
+  {path:'producto/editar',component:EditarProductosComponent},
+  {path:'producto/crear',component:CrearProductoComponent },
   {path:'producto',component:LandingPageProductComponent},
-  {path: '**',component:PageNotFoundedComponent}
+  {path:'carrito',component:LandingPageCarritoComponent},
+  {path: '**',component:PageNotFoundedComponent},
+
 ]
 
 

@@ -1,0 +1,27 @@
+
+<div class="container"> 
+<div class="container_col">
+<div *ngFor="let producto of this.carrito.productos">
+    <div [carrito.]> </div>
+    <div class="card_w-75">
+        <div class="card-body">
+          <h5 class="card-title"> Articulo:{{producto.categoria}}, {{producto.marca}}</h5>
+          
+          <p class="card-text"> Precio: {{producto.precio|currency:'DOP'}}</p>
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+</div>
+</div>
+<div class="side_left">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Detalles</h5>
+          <p class="card-text"><b>Cantidad de articulos: </b> {{this.carrito.cantidadDeArticulos}}</p>
+          <p class="card-text"><b>Total:</b> {{this.carrito.total}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+</div>
+</div>

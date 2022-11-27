@@ -1,1 +1,3 @@
-<app-filtro></app-filtro>
+<app-filtro (productosFiltrados)="productosFiltrados($event)"></app-filtro>
+
+<app-renderizar-productos [productosParaMostrar]="this.productos"></app-renderizar-productos>

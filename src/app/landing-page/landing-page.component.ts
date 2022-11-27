@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
-import { Producto } from '../Producto';
+import { ProductoDTO } from '../Producto/Producto';
 import { Productos } from '../seedData/seedData';
 
 @Component({
@@ -10,17 +10,14 @@ import { Productos } from '../seedData/seedData';
 })
 export class LandingPageComponent implements OnInit {
 
-  productos:Producto[]=Productos;
+ 
+productos:ProductoDTO[]=[];
 
-categorias:string[] =[];
+  productosFiltrados(productos:ProductoDTO[]){
 
+    this.productos = productos;
 
-@Input()
-productosFiltrados!:Producto[];
-
-filtrando:boolean=false;
-
-
+  }
 
  
  
@@ -29,45 +26,17 @@ filtrando:boolean=false;
 
 
 
-  this.productos.forEach(producto => {
 
-  if(producto.categoria != this.categorias.find(categoria => categoria == producto.categoria)){
-
-  this.categorias.push(producto.categoria);
-  }
-  
-});
-
-
-
-console.log(this.categorias)
-}
-
-
-
-
-
-
-getProducto(categoria:string){
-
-
-  this.productosFiltrados= this.productos.filter(producto => producto.categoria==categoria);
-  return this.productosFiltrados;
-
-}
-
-filtrar(productos:Producto[]){
-
-  this.filtrando=true;
- this.productosFiltrados =productos
- console.log(this.productosFiltrados);
-}
-
-getProductByFilter(){
 
   
-  return this.productosFiltrados;
+ }
+
 }
-   
-}
+
+
+
+
+
+
+
 

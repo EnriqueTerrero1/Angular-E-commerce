@@ -1,7 +1,7 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Producto } from '../Producto';
+import { ProductoDTO } from '../Producto/Producto';
 import { Productos } from '../seedData/seedData';
 
 @Component({
@@ -18,12 +18,12 @@ export class FiltroComponent implements OnInit {
  
   form!: FormGroup
 
-  productos: Producto[] = Productos;
+  productos: ProductoDTO[] = Productos;
   categorias:string[]=[];
   
   @Output()
 
-  buscar: EventEmitter<Producto[]> = new EventEmitter<Producto[]>();
+  productosFiltrados: EventEmitter<ProductoDTO[]> = new EventEmitter<ProductoDTO[]>();
 
 
   ngOnInit(): void {
@@ -48,13 +48,11 @@ export class FiltroComponent implements OnInit {
     
       this.categorias.push(producto.categoria);
       }
+
+
       
     });
     
-    
-
-   
-
   }
 
 
@@ -84,6 +82,8 @@ export class FiltroComponent implements OnInit {
       console.log(this.productos);
 
     }
+
+    this.productosFiltrados.emit(this.productos);
     
 
   }

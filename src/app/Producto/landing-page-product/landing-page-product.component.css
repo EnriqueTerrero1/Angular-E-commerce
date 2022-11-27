@@ -1,11 +1,37 @@
-table{
+.table{
 
-    width: 600px;
-    height: 600px;
-}
+    max-width: 600px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+justify-content: center;}
 
+tbody{
+display: flex;
+align-items: center;
+
+
+    }
+
+    thead{
+        display: flex;
+        align-items: center;
+       
+
+    }
 .container{
 
     display: flex;
     justify-content: center;
+}
+.crear{
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+th{
+
+
+    padding: 2rem;
 }

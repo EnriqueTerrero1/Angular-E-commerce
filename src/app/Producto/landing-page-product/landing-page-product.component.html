@@ -1,5 +1,7 @@
 
+<button class="btn btn-primary  crear" routerLink="/producto/crear">Crear nuevo producto</button>
 <div class="container">
+  
 <table class="table">
     <thead>
       <tr>
@@ -8,20 +10,21 @@
         <th scope="col">Marca</th>
         <th scope="col">Categoria</th>
         <th scope="col">Precio</th>
-
+        <th scope="col">Accion</th>
+        <th scope="col">Accion</th>
       </tr>
     </thead>
 
 
     <tbody *ngFor="let producto of productos">
       <tr>
-        <th>{{producto.id}}</th>
-        <td>{{producto.descripcion}}</td>
-        <td>{{producto.marca}}</td>
-        <td>{{producto.categoria}}</td>
-        <td>{{producto.precio|currency:"DOP"}}</td>
-        <td><button class="btn btn-success">Editar</button></td>
-        <td><button class="btn btn-danger">Eliminar</button></td>
+        <td scope="row">{{producto.id}}</td>
+        <td scope="row">{{producto.descripcion}}</td>
+        <td scope="row">{{producto.marca}}</td>
+        <td scope="row">{{producto.categoria}}</td>
+        <td scope="row">{{producto.precio|currency:"DOP"}}</td>
+        <td scope="row"><button class="btn btn-success" routerLink="/producto/editar" >Editar</button></td>
+        <td scope="row"><button class="btn btn-danger" (click)="eliminar(producto)">Eliminar</button></td>
 
       </tr>
       
